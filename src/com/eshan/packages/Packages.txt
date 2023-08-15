@@ -1,0 +1,29 @@
+Packages:
+Packages are containers of classes.
+Package in Java is a mechanism to encapsulate a group of classes, sub packages and interfaces.
+Naming convention : name in reverse domain manner like - com.eshan.package.a etc
+Packages are used for: Preventing naming conflicts.
+
+Suppose a situation when you have classes of same name for eg.,
+class Greeting {
+    void printGreeting(){
+        System.out.println("Good Morning");
+    }
+}
+
+class Greeting {
+    void printGreeting(){
+        System.out.println("Hello!!");
+    }
+}
+
+And your work is to call these printGreeting Methods from both Greeting class.
+
+If you create class with same name then java will throw error stating that you cannot have classes with same names
+inside a package. For this reason you have to create one Greeting in one package and other Greeting in other package
+for calling that printGreeting()
+
+Static :
+Such properties that are not related to the object but common in all object of that class like population,
+then those properties are static.
+A static member can only access static members
