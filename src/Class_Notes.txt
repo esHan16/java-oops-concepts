@@ -1,0 +1,93 @@
+A class is a blueprint of the object. A class has some properties and behaviour.
+An object is an instance of class. Objects are also called Instances
+eg., A car is a class but the Audi, Maruti, BMW are its objects.
+
+class Student { // Example of class
+    int rollNo; // Properties
+    String studentName;
+    float marks;
+}
+
+We can access the instance variables of class (properties of class) using the [.] dot operator.
+class Main {
+    public static void main(String []args){
+        Student eshan ; // Here you are declaring the reference to the object at compile time
+        eshan = new Student(); // This new operator dynamically allocate memory at runtime and returns a reference to it
+        eshan.studentName = "Eshan Verma";
+        eshan.rollNo = 12;
+        eshan.marks = 70.43F;
+        System.out.println(eshan.studentName+" "+eshan.rollNo+" "+eshan.marks); // Printing the values
+    }
+}
+
+Here, in eshan = new Student();
+Student() is constructor which is a default constructor.
+A constructor basically defines what happens is when your object is created. These are special type of function inside the class.
+
+class Main {
+    public static void main(String[] args) {
+        Student eshan = new Student();
+        System.out.println(eshan.studentName+" "+eshan.rollNo+" "+eshan.marks);
+        eshan.changeName("Aman");
+        eshan.greeting();
+    }
+}
+class Student { // Example of class
+    int rollNo; // Properties
+    String studentName;
+    float marks;
+    void greeting() { // Method
+        System.out.println("Good Morning! It's me "+studentName);
+    }
+    void changeName(String name){
+        studentName = name;
+    }
+    Student() { // Default Constructor
+        this.studentName = "Eshan Verma";
+        this.rollNo = 15;
+        this.marks = 84.45F;
+        /* This is how you call a constructor from another constructor */
+        // this("Sonu",24,33.33F);
+    }
+
+    Student(String studentName, int rollNo, float marks){
+        this.studentName = studentName;
+        this.rollNo = rollNo;
+        this.marks = marks;
+    }
+}
+
+
+this is a special keyword in Java that is used to refer to an instance of the current class.
+Using the this keyword, we can refer to the current class's methods, constructors, instance variables, and many more.
+We cannot use the this keyword as an identifier in Java.
+
+Memory Allocation of "new" Keywords:
+Student one = new Student();
+Student two = one;
+here one and two are referring to the same memory location
+if we do something like this:
+one.studentName = "Anuj" then,
+the value of studentName inside object two will also be changed to "Anuj".
+
+Reference in Java :
+Reference holds the address of an object or instance.
+Whenever we want to call instance methods, we use this reference which holds the address of the object.
+References are like C++ pointers. Eg.,
+Student s1 = new Student();
+s1 is a reference of type Student and points to the object of type Student
+and will be used to access instance variables and methods.
+
+Wrapper Classes in java :
+A Wrapper class in Java is a class whose object wraps or contains primitive data types.eg.,
+Integer age = 45;
+
+Final variables:
+The variables whose values cannot be modified further, treated as constant.
+Whenever we declare a final variable we have to initialize it.
+final variables are only used when the instance variable is primitive data types but the values inside the reference types can change
+But, in reference type it will keep on referring to the same memory location and cannot not point to some other memory location or other class.
+
+Garbage Collection:
+Java automatically do garbage collection and destroys the object when not being in use. We cannot manually destroy object.
+But when the object gets remove then at that time finalize() method is called.
