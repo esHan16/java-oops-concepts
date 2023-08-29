@@ -17,8 +17,8 @@ class Brackets{
 
 public class SynchronizedMethod {
     public static void main(String[] args) {
-        Brackets bracket1 = new Brackets();
-        Brackets bracket2 = new Brackets();
+        CurlyBrackets bracket1 = new CurlyBrackets();
+        CurlyBrackets bracket2 = new CurlyBrackets();
         /*
         The reason why as soon as we are making use of different objects, we are getting these kind of inconsistent results is
         When we mark a specific element as synchronized intrinsic lock, a monitor lock would be applied.
